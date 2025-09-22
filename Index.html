@@ -1,0 +1,1642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HazardSphere - Advanced Ocean Intelligence Platform</title>
+    <style>
+        /* Global Reset and Advanced Foundation */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #87CEEB 0%, #4682B4 50%, #1E90FF 100%);
+            background-attachment: fixed;
+            color: #ffffff;
+            overflow: hidden;
+            perspective: 2000px;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        /* Ultra Advanced Sky Background Effects */
+        .sky-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.3) 0%, transparent 25%),
+                radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.2) 0%, transparent 30%),
+                radial-gradient(circle at 40% 70%, rgba(255, 255, 255, 0.25) 0%, transparent 35%);
+            animation: gentleCloudMove 30s ease-in-out infinite;
+            z-index: -10;
+        }
+
+        @keyframes gentleCloudMove {
+            0%, 100% {
+                transform: translateX(0px) translateY(0px);
+            }
+            25% {
+                transform: translateX(20px) translateY(-10px);
+            }
+            50% {
+                transform: translateX(-10px) translateY(15px);
+            }
+            75% {
+                transform: translateX(15px) translateY(-5px);
+            }
+        }
+
+        /* Optimized Particle Ocean System */
+        #particleCanvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -5;
+            opacity: 0.4;
+        }
+
+        /* Advanced 3D Container System */
+        .container {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            z-index: 1;
+            transform-style: preserve-3d;
+        }
+
+        /* Consistent Header Styling */
+        .holo-header {
+            background: rgba(135, 206, 235, 0.2);
+            backdrop-filter: blur(25px) saturate(1.5);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 25px;
+            margin: 10px;
+            padding: 15px 25px;
+            box-shadow: 
+                0 0 40px rgba(135, 206, 235, 0.4),
+                inset 0 0 30px rgba(255, 255, 255, 0.1);
+            animation: gentleFloat 8s ease-in-out infinite;
+            transform-style: preserve-3d;
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        @keyframes gentleFloat {
+            0%, 100% {
+                transform: translateY(0px) rotateX(0deg);
+            }
+            50% {
+                transform: translateY(-8px) rotateX(1deg);
+            }
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            position: relative;
+        }
+
+        .logo-3d {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #ffffff;
+            text-shadow: 
+                0 0 20px rgba(135, 206, 235, 0.8),
+                0 0 40px rgba(255, 255, 255, 0.6);
+            animation: logoGlow 4s ease-in-out infinite alternate;
+            transform-style: preserve-3d;
+        }
+
+        @keyframes logoGlow {
+            0% {
+                text-shadow: 
+                    0 0 20px rgba(135, 206, 235, 0.8),
+                    0 0 40px rgba(255, 255, 255, 0.6);
+            }
+            100% {
+                text-shadow: 
+                    0 0 30px rgba(135, 206, 235, 1),
+                    0 0 60px rgba(255, 255, 255, 0.8);
+            }
+        }
+
+        /* Optimized Quantum Navigation */
+        .quantum-nav {
+            position: fixed;
+            top: 50%;
+            right: 30px;
+            transform: translateY(-50%);
+            z-index: 200;
+            perspective: 800px;
+        }
+
+        .orbital-menu {
+            position: relative;
+            width: 180px;
+            height: 180px;
+            transform-style: preserve-3d;
+            animation: smoothOrbit 30s linear infinite;
+        }
+
+        @keyframes smoothOrbit {
+            0% {
+                transform: rotateY(0deg);
+            }
+            100% {
+                transform: rotateY(360deg);
+            }
+        }
+
+        .nav-item {
+            position: absolute;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, rgba(135, 206, 235, 0.8), rgba(255, 255, 255, 0.6));
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 20px rgba(135, 206, 235, 0.5);
+            font-size: 1.3rem;
+            color: #ffffff;
+        }
+
+        .nav-item:hover {
+            transform: scale(1.2) translateZ(20px);
+            box-shadow: 0 0 30px rgba(135, 206, 235, 0.8);
+        }
+
+        .nav-item:nth-child(1) { top: 0; left: 62px; }
+        .nav-item:nth-child(2) { top: 30px; right: 0; }
+        .nav-item:nth-child(3) { bottom: 30px; right: 0; }
+        .nav-item:nth-child(4) { bottom: 0; left: 62px; }
+        .nav-item:nth-child(5) { top: 30px; left: 0; }
+        .nav-item:nth-child(6) { bottom: 30px; left: 0; }
+
+        /* Enhanced Interface Grid Layout */
+        .interface-grid {
+            flex: 1;
+            display: grid;
+            grid-template-columns: 1.2fr 2.5fr 1.3fr;
+            gap: 15px;
+            padding: 0 15px 15px;
+            height: calc(100vh - 120px);
+            min-height: 0;
+        }
+
+        /* Enhanced Panel Styling with Scrolling */
+        .holo-panel {
+            background: rgba(135, 206, 235, 0.15);
+            backdrop-filter: blur(20px) saturate(1.8);
+            border: 2px solid rgba(255, 255, 255, 0.25);
+            border-radius: 20px;
+            padding: 0;
+            box-shadow: 
+                0 15px 35px rgba(0, 0, 0, 0.2),
+                inset 0 2px 0 rgba(255, 255, 255, 0.2),
+                0 0 30px rgba(135, 206, 235, 0.2);
+            position: relative;
+            overflow: hidden;
+            animation: gentleFloat 12s ease-in-out infinite;
+            display: flex;
+            flex-direction: column;
+            min-height: 0;
+        }
+
+        /* Panel Headers */
+        .panel-header {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            flex-shrink: 0;
+        }
+
+        .panel-title {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #ffffff;
+            text-align: center;
+            margin: 0;
+            text-shadow: 0 0 15px rgba(135, 206, 235, 0.8);
+        }
+
+        /* Scrollable Panel Content */
+        .panel-content {
+            flex: 1;
+            overflow-y: auto;
+            padding: 20px;
+            scrollbar-width: thin;
+            scrollbar-color: rgba(135, 206, 235, 0.8) rgba(255, 255, 255, 0.1);
+        }
+
+        .panel-content::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .panel-content::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+        }
+
+        .panel-content::-webkit-scrollbar-thumb {
+            background: rgba(135, 206, 235, 0.8);
+            border-radius: 4px;
+        }
+
+        .panel-content::-webkit-scrollbar-thumb:hover {
+            background: rgba(135, 206, 235, 1);
+        }
+
+        /* Left Panel Form Styling */
+        .report-panel .panel-content {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .form-group {
+            position: relative;
+            margin-bottom: 15px;
+        }
+
+        .form-label {
+            display: block;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .holo-input {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 15px;
+            padding: 15px 20px;
+            color: #ffffff;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(15px);
+            box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.1);
+        }
+
+        .holo-input:focus {
+            outline: none;
+            border-color: rgba(255, 255, 255, 0.8);
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 0 20px rgba(135, 206, 235, 0.5);
+            transform: scale(1.02);
+        }
+
+        .holo-input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .holo-button {
+            background: linear-gradient(45deg, #4682B4, #1E90FF);
+            border: none;
+            border-radius: 15px;
+            padding: 15px 25px;
+            color: #ffffff;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(70, 130, 180, 0.4);
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        .holo-button:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 15px 35px rgba(135, 206, 235, 0.6);
+        }
+
+        /* Enhanced Map Panel */
+        .map-panel .panel-content {
+            padding: 0;
+            position: relative;
+        }
+
+        .map-container {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            border-radius: 0 0 18px 18px;
+            overflow: hidden;
+            background: linear-gradient(135deg, #4682B4, #1E90FF);
+        }
+
+        #globeCanvas {
+            width: 100%;
+            height: 100%;
+            display: block;
+            cursor: grab;
+        }
+
+        #globeCanvas:active {
+            cursor: grabbing;
+        }
+
+        .map-overlay {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            right: 15px;
+            display: flex;
+            justify-content: space-between;
+            z-index: 15;
+        }
+
+        .map-controls {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            border-radius: 12px;
+            padding: 8px;
+            display: flex;
+            gap: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .control-btn {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(45deg, rgba(255, 255, 255, 0.2), rgba(135, 206, 235, 0.4));
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 10px;
+            color: #ffffff;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .control-btn:hover {
+            background: linear-gradient(45deg, rgba(255, 255, 255, 0.4), rgba(135, 206, 235, 0.7));
+            transform: scale(1.1);
+        }
+
+        /* Enhanced Right Panel Analytics */
+        .analytics-panel .panel-content {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .ai-brain {
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.2), rgba(135, 206, 235, 0.1));
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: gentlePulse 4s ease-in-out infinite;
+            flex-shrink: 0;
+        }
+
+        @keyframes gentlePulse {
+            0%, 100% {
+                box-shadow: 0 0 30px rgba(135, 206, 235, 0.4);
+                transform: scale(1);
+            }
+            50% {
+                box-shadow: 0 0 50px rgba(135, 206, 235, 0.7);
+                transform: scale(1.05);
+            }
+        }
+
+        .ai-brain::before {
+            content: '🧠';
+            font-size: 2rem;
+            animation: gentleRotate 8s linear infinite;
+        }
+
+        @keyframes gentleRotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .analytics-item {
+            background: rgba(255, 255, 255, 0.1);
+            border-left: 4px solid rgba(135, 206, 235, 0.8);
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 10px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .analytics-item:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateX(5px);
+        }
+
+        .metric-value {
+            font-size: 1.6rem;
+            font-weight: bold;
+            color: #ffffff;
+            text-shadow: 0 0 15px rgba(135, 206, 235, 0.8);
+        }
+
+        .metric-label {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-top: 5px;
+        }
+
+        /* Neural Network Visualization */
+        .neural-viz {
+            height: 180px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            margin-bottom: 15px;
+        }
+
+        #neuralCanvas {
+            width: 100%;
+            height: 100%;
+            border-radius: 15px;
+        }
+
+        /* Additional Form Elements */
+        .form-section {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .form-section-title {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            text-shadow: 0 0 10px rgba(135, 206, 235, 0.5);
+        }
+
+        .checkbox-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9rem;
+        }
+
+        .checkbox-item input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            accent-color: #87CEEB;
+        }
+
+        .range-input {
+            width: 100%;
+            height: 6px;
+            border-radius: 3px;
+            background: rgba(255, 255, 255, 0.2);
+            outline: none;
+            -webkit-appearance: none;
+            appearance: none;
+        }
+
+        .range-input::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #87CEEB;
+            cursor: pointer;
+            box-shadow: 0 0 10px rgba(135, 206, 235, 0.8);
+        }
+
+        .file-upload-area {
+            border: 2px dashed rgba(255, 255, 255, 0.3);
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .file-upload-area:hover {
+            border-color: rgba(135, 206, 235, 0.8);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .file-upload-area.dragover {
+            border-color: rgba(135, 206, 235, 1);
+            background: rgba(135, 206, 235, 0.2);
+        }
+
+        /* Notification System */
+        .notification-container {
+            position: fixed;
+            top: 25px;
+            right: 250px;
+            z-index: 1000;
+        }
+
+        .notification {
+            background: rgba(135, 206, 235, 0.2);
+            backdrop-filter: blur(20px) saturate(1.5);
+            border-left: 5px solid rgba(135, 206, 235, 0.8);
+            border-radius: 15px;
+            padding: 15px 20px;
+            margin-bottom: 10px;
+            color: #ffffff;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            animation: slideIn 0.5s ease-out;
+            max-width: 300px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        /* Loading Animation */
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #87CEEB, #4169E1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+        }
+
+        .loading-spinner {
+            width: 150px;
+            height: 150px;
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            border-top: 5px solid #ffffff;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1400px) {
+            .interface-grid {
+                grid-template-columns: 1fr 2fr;
+                grid-template-rows: 1fr 1fr;
+            }
+            .analytics-panel {
+                grid-column: 1 / -1;
+            }
+            .quantum-nav {
+                right: 15px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .interface-grid {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+            .quantum-nav {
+                display: none;
+            }
+            .holo-header {
+                margin: 5px;
+                padding: 10px 15px;
+            }
+            .logo-3d {
+                font-size: 1.8rem;
+            }
+            .notification-container {
+                right: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Sky Background System -->
+    <div class="sky-background"></div>
+    
+    <!-- Optimized Particle Canvas -->
+    <canvas id="particleCanvas"></canvas>
+    
+    <!-- Loading Screen -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner"></div>
+    </div>
+    
+    <div class="container">
+        <!-- Header -->
+        <div class="holo-header">
+            <div class="logo-container">
+                <div class="logo-3d">🌊 HazardSphere</div>
+                <div style="text-align: center;">
+                    <div style="font-size: 0.9rem; opacity: 0.9;">Advanced Ocean Intelligence Platform</div>
+                    <div style="font-size: 0.7rem; opacity: 0.7;">Ministry of Earth Sciences • INCOIS Integration • AI-Powered</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Quantum Navigation -->
+        <div class="quantum-nav">
+            <div class="orbital-menu">
+                <div class="nav-item" title="Dashboard">📊</div>
+                <div class="nav-item" title="Reports">📝</div>
+                <div class="nav-item" title="Analytics">🧠</div>
+                <div class="nav-item" title="Alerts">🚨</div>
+                <div class="nav-item" title="Settings">⚙</div>
+                <div class="nav-item" title="Help">❓</div>
+            </div>
+        </div>
+        
+        <!-- Main Interface -->
+        <div class="interface-grid">
+            <!-- Left Panel - Enhanced Reporting with Scroll -->
+            <div class="holo-panel report-panel">
+                <div class="panel-header">
+                    <div class="panel-title">🚨 Hazard Reporting System</div>
+                </div>
+                <div class="panel-content">
+                    <!-- Basic Information Section -->
+                    <div class="form-section">
+                        <div class="form-section-title">📍 Location Information</div>
+                        <div class="form-group">
+                            <label class="form-label">GPS Coordinates</label>
+                            <input type="text" class="holo-input" placeholder="📍 GPS Location (Auto-detecting...)" id="locationInput">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Additional Location Details</label>
+                            <input type="text" class="holo-input" placeholder="Nearest landmark, city, or coastal area" id="locationDetails">
+                        </div>
+                    </div>
+
+                    <!-- Hazard Classification Section -->
+                    <div class="form-section">
+                        <div class="form-section-title">🌊 Hazard Classification</div>
+                        <div class="form-group">
+                            <label class="form-label">Primary Hazard Type</label>
+                            <select class="holo-input" id="hazardType">
+                                <option>🌊 Select Ocean Hazard Type</option>
+                                <option>🌪 Tsunami Warning Alert</option>
+                                <option>⚡ Storm Surge Detection</option>
+                                <option>🌊 Abnormal Wave Patterns</option>
+                                <option>🔄 Dangerous Swell Activity</option>
+                                <option>💨 Hazardous Coastal Currents</option>
+                                <option>⚠ Unusual Sea Behavior</option>
+                                <option>🏔 Underwater Landslide Risk</option>
+                                <option>🌋 Volcanic Ocean Activity</option>
+                                <option>🌡 Temperature Anomaly</option>
+                                <option>🐟 Marine Life Disturbance</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Risk Assessment Level</label>
+                            <select class="holo-input" id="severityLevel">
+                                <option>📊 Risk Assessment Level</option>
+                                <option>🟢 Level 1: Minimal Risk - Minor observation</option>
+                                <option>🟡 Level 2: Moderate Risk - Caution advised</option>
+                                <option>🟠 Level 3: High Risk - Immediate attention</option>
+                                <option>🔴 Level 4: Extreme Risk - Evacuation recommended</option>
+                                <option>⚫ Level 5: Catastrophic Risk - Emergency response</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Confidence Level: <span id="confidenceValue">50%</span></label>
+                            <input type="range" class="range-input" min="0" max="100" value="50" id="confidenceLevel" 
+                                   oninput="document.getElementById('confidenceValue').textContent = this.value + '%'">
+                        </div>
+                    </div>
+
+                    <!-- Observation Details Section -->
+                    <div class="form-section">
+                        <div class="form-section-title">📝 Observation Details</div>
+                        <div class="form-group">
+                            <label class="form-label">Date & Time of Observation</label>
+                            <input type="datetime-local" class="holo-input" id="observationTime">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Detailed Description</label>
+                            <textarea class="holo-input" placeholder="Describe what you observed in detail - wave height, water color, animal behavior, weather conditions, duration of event, etc." rows="6" id="description"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Environmental Conditions</label>
+                            <div class="checkbox-group">
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="windyConditions">
+                                    <label for="windyConditions">💨 Strong winds present</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="rainyConditions">
+                                    <label for="rainyConditions">🌧 Heavy rainfall</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="clearSky">
+                                    <label for="clearSky">☀ Clear sky conditions</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="foggyConditions">
+                                    <label for="foggyConditions">🌫 Fog or low visibility</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="extremeTemp">
+                                    <label for="extremeTemp">🌡 Unusual temperature</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Media Upload Section -->
+                    <div class="form-section">
+                        <div class="form-section-title">📸 Media Evidence</div>
+                        <div class="form-group">
+                            <label class="form-label">Upload Photos/Videos</label>
+                            <div class="file-upload-area" onclick="document.getElementById('mediaUpload').click()">
+                                <div style="font-size: 2rem; margin-bottom: 10px;">📁</div>
+                                <div>Click to upload or drag files here</div>
+                                <div style="font-size: 0.8rem; opacity: 0.7; margin-top: 5px;">
+                                    Supports: JPG, PNG, MP4, MOV (Max 50MB per file)
+                                </div>
+                            </div>
+                            <input type="file" class="holo-input" accept="image/,video/" id="mediaUpload" multiple style="display: none;">
+                        </div>
+                    </div>
+
+                    <!-- Contact Information Section -->
+                    <div class="form-section">
+                        <div class="form-section-title">👤 Contact Information (Optional)</div>
+                        <div class="form-group">
+                            <label class="form-label">Name</label>
+                            <input type="text" class="holo-input" placeholder="Your name (for follow-up if needed)" id="reporterName">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Phone Number</label>
+                            <input type="tel" class="holo-input" placeholder="Contact number for emergency response" id="reporterPhone">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Email</label>
+                            <input type="email" class="holo-input" placeholder="Email for report updates" id="reporterEmail">
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div style="margin-top: 20px;">
+                        <button class="holo-button" onclick="submitAdvancedReport()">
+                            🚀 Submit Detailed Report
+                        </button>
+                        
+                        <button class="holo-button" onclick="emergencyProtocol()" style="background: linear-gradient(45deg, #ff6b6b, #ff4757);">
+                            🆘 EMERGENCY PROTOCOL
+                        </button>
+                        
+                        <button class="holo-button" onclick="aiAssistance()" style="background: linear-gradient(45deg, #5f27cd, #341f97);">
+                            🤖 AI Assistance Mode
+                        </button>
+
+                        <button class="holo-button" onclick="saveDraft()" style="background: linear-gradient(45deg, #f39c12, #e67e22);">
+                            💾 Save as Draft
+                        </button>
+
+                        <button class="holo-button" onclick="clearForm()" style="background: linear-gradient(45deg, #95a5a6, #7f8c8d);">
+                            🔄 Clear Form
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Center Panel - Enhanced 3D Globe -->
+            <div class="holo-panel map-panel">
+                <div class="panel-header">
+                    <div class="panel-title">🌍 3D Global Ocean Hazard Map</div>
+                </div>
+                <div class="panel-content">
+                    <div class="map-container">
+                        <canvas id="globeCanvas"></canvas>
+                        
+                        <div class="map-overlay">
+                            <div class="map-controls">
+                                <div class="control-btn" onclick="toggle3DMode()" title="3D Globe Mode">🌍</div>
+                                <div class="control-btn" onclick="toggleSatellite()" title="Satellite View">🛰</div>
+                                <div class="control-btn" onclick="toggleReports()" title="Live Reports">📍</div>
+                                <div class="control-btn" onclick="toggleSocial()" title="Social Media">💬</div>
+                                <div class="control-btn" onclick="toggleWeather()" title="Weather">🌦</div>
+                                <div class="control-btn" onclick="toggleOceanCurrent()" title="Currents">🌊</div>
+                            </div>
+                            
+                            <div class="map-controls">
+                                <div class="control-btn" onclick="zoomInGlobe()" title="Zoom In">➕</div>
+                                <div class="control-btn" onclick="zoomOutGlobe()" title="Zoom Out">➖</div>
+                                <div class="control-btn" onclick="resetGlobeView()" title="Reset">🏠</div>
+                                <div class="control-btn" onclick="autoRotate()" title="Auto Rotate">🔄</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Right Panel - Enhanced Analytics with Scroll -->
+            <div class="holo-panel analytics-panel">
+                <div class="panel-header">
+                    <div class="panel-title">🧠 AI Analytics Hub</div>
+                </div>
+                <div class="panel-content">
+                    <div class="ai-brain"></div>
+                    
+                    <div class="analytics-item">
+                        <div class="metric-value" id="activeReports">284</div>
+                        <div class="metric-label">Active Global Reports</div>
+                    </div>
+                    
+                    <div class="analytics-item">
+                        <div class="metric-value" id="socialMentions">2,547</div>
+                        <div class="metric-label">Social Media Alerts</div>
+                    </div>
+                    
+                    <div class="analytics-item">
+                        <div class="metric-value" id="aiPredictions">17</div>
+                        <div class="metric-label">AI Predictions (Next 24h)</div>
+                    </div>
+                    
+                    <div class="analytics-item">
+                        <div class="metric-value" id="riskLevel">ELEVATED</div>
+                        <div class="metric-label">Global Risk Assessment</div>
+                    </div>
+                    
+                    <div class="analytics-item">
+                        <div class="metric-value" id="accuracy">96.8%</div>
+                        <div class="metric-label">AI Prediction Accuracy</div>
+                    </div>
+
+                    <div class="analytics-item">
+                        <div class="metric-value" id="responseTime">2.3s</div>
+                        <div class="metric-label">Average Response Time</div>
+                    </div>
+
+                    <div class="analytics-item">
+                        <div class="metric-value" id="coastalStations">47</div>
+                        <div class="metric-label">Active Monitoring Stations</div>
+                    </div>
+                    
+                    <div class="neural-viz">
+                        <canvas id="neuralCanvas"></canvas>
+                    </div>
+                    
+                    <div>
+                        <div style="font-size: 1rem; color: #ffffff; margin-bottom: 12px; font-weight: 600;">
+                            🔬 Recent AI Insights:
+                        </div>
+                        <div style="font-size: 0.85rem; opacity: 0.9; line-height: 1.6;">
+                            • Tsunami risk elevated near Andaman Sea region<br>
+                            • Unusual tidal patterns detected via satellite imagery<br>
+                            • Social sentiment analysis indicates growing concern<br>
+                            • Weather models suggest potential storm formation<br>
+                            • Ocean temperature anomalies increasing globally<br>
+                            • Marine ecosystem disturbance reported in 3 locations<br>
+                            • Coastal erosion acceleration detected<br>
+                            • Seismic activity correlation with wave patterns found
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 20px;">
+                        <div style="font-size: 1rem; color: #ffffff; margin-bottom: 12px; font-weight: 600;">
+                            📊 System Performance:
+                        </div>
+                        <div style="font-size: 0.85rem; opacity: 0.9; line-height: 1.6;">
+                            • Data processing: 98.7% efficiency<br>
+                            • Satellite connectivity: Optimal<br>
+                            • Emergency response: Ready<br>
+                            • Database synchronization: Active<br>
+                            • Backup systems: Online
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Notification System -->
+    <div class="notification-container" id="notificationContainer"></div>
+
+    <script>
+        // Same JavaScript as before but with additional functions for new form elements
+
+        // Optimized Global Application State
+        let globalAppState = {
+            isLoading: true,
+            globeRotationSpeed: 0.005,
+            mousePosition: { x: 0, y: 0 },
+            touchDevice: false
+        };
+
+        // Enhanced 3D Globe System (same as before)
+        let globe3D = {
+            canvas: null,
+            context: null,
+            rotationX: 0.2,
+            rotationY: 0,
+            mouseDown: false,
+            lastMouseX: 0,
+            lastMouseY: 0,
+            zoomLevel: 1.0,
+            autoRotating: true,
+            hazardPoints: [],
+            countries: []
+        };
+
+        // Optimized Particle System (same as before)
+        let particleSystem = {
+            canvas: null,
+            context: null,
+            particles: [],
+            particleCount: 80,
+            animationRunning: true
+        };
+
+        // Application Initialization (same as before but with enhanced file upload)
+        window.addEventListener('load', function() {
+            console.log('🌊 HazardSphere initialization started...');
+            
+            globalAppState.touchDevice = 'ontouchstart' in window;
+            
+            setTimeout(function() {
+                document.getElementById('loadingOverlay').style.display = 'none';
+                globalAppState.isLoading = false;
+                
+                initializeApplication();
+                setupFileUpload();
+                setDefaultDateTime();
+                showWelcomeMessage();
+            }, 2500);
+        });
+
+        function initializeApplication() {
+            initializeOptimizedParticles();
+            initializeEnhanced3DGlobe();
+            initializeNeuralNetwork();
+            startDataUpdates();
+            initializeGeolocation();
+            setupEventHandlers();
+            
+            console.log('✅ All systems initialized');
+        }
+
+        // Enhanced file upload with drag and drop
+        function setupFileUpload() {
+            const fileUploadArea = document.querySelector('.file-upload-area');
+            const fileInput = document.getElementById('mediaUpload');
+
+            fileUploadArea.addEventListener('dragover', function(e) {
+                e.preventDefault();
+                fileUploadArea.classList.add('dragover');
+            });
+
+            fileUploadArea.addEventListener('dragleave', function(e) {
+                e.preventDefault();
+                fileUploadArea.classList.remove('dragover');
+            });
+
+            fileUploadArea.addEventListener('drop', function(e) {
+                e.preventDefault();
+                fileUploadArea.classList.remove('dragover');
+                const files = e.dataTransfer.files;
+                fileInput.files = files;
+                updateFileUploadDisplay(files);
+            });
+
+            fileInput.addEventListener('change', function() {
+                updateFileUploadDisplay(this.files);
+            });
+        }
+
+        function updateFileUploadDisplay(files) {
+            const fileUploadArea = document.querySelector('.file-upload-area');
+            if (files.length > 0) {
+                let fileList = '';
+                for (let i = 0; i < files.length; i++) {
+                    fileList += 📎 ${files[i].name}<br>;
+                }
+                fileUploadArea.innerHTML = `
+                    <div style="font-size: 1.5rem; margin-bottom: 10px;">✅</div>
+                    <div>${files.length} file(s) selected:</div>
+                    <div style="font-size: 0.8rem; margin-top: 5px;">${fileList}</div>
+                `;
+            }
+        }
+
+        function setDefaultDateTime() {
+            const now = new Date();
+            const datetime = now.toISOString().slice(0, 16);
+            document.getElementById('observationTime').value = datetime;
+        }
+
+        // New form functions
+        function saveDraft() {
+            const formData = gatherFormData();
+            localStorage.setItem('hazardReportDraft', JSON.stringify(formData));
+            showNotification('💾 Draft saved successfully');
+        }
+
+        function clearForm() {
+            if (confirm('Are you sure you want to clear all form data?')) {
+                document.querySelectorAll('.holo-input').forEach(input => {
+                    if (input.type === 'checkbox') {
+                        input.checked = false;
+                    } else {
+                        input.value = '';
+                        if (input.tagName === 'SELECT') {
+                            input.selectedIndex = 0;
+                        }
+                    }
+                });
+                document.getElementById('confidenceLevel').value = 50;
+                document.getElementById('confidenceValue').textContent = '50%';
+                setDefaultDateTime();
+                showNotification('🔄 Form cleared');
+            }
+        }
+
+        function gatherFormData() {
+            return {
+                location: document.getElementById('locationInput').value,
+                locationDetails: document.getElementById('locationDetails').value,
+                hazardType: document.getElementById('hazardType').value,
+                severity: document.getElementById('severityLevel').value,
+                confidence: document.getElementById('confidenceLevel').value,
+                observationTime: document.getElementById('observationTime').value,
+                description: document.getElementById('description').value,
+                reporterName: document.getElementById('reporterName').value,
+                reporterPhone: document.getElementById('reporterPhone').value,
+                reporterEmail: document.getElementById('reporterEmail').value,
+                environmentalConditions: {
+                    windy: document.getElementById('windyConditions').checked,
+                    rainy: document.getElementById('rainyConditions').checked,
+                    clear: document.getElementById('clearSky').checked,
+                    foggy: document.getElementById('foggyConditions').checked,
+                    extremeTemp: document.getElementById('extremeTemp').checked
+                }
+            };
+        }
+
+        // Include all the same functions from the previous version (particles, globe, neural network, etc.)
+        // [Previous JavaScript functions remain the same...]
+
+        // Enhanced report submission
+        function submitAdvancedReport() {
+            const formData = gatherFormData();
+            
+            // Enhanced validation
+            if (!formData.hazardType || formData.hazardType.includes('Select')) {
+                showNotification('❌ Please specify the ocean hazard type');
+                document.getElementById('hazardType').focus();
+                return;
+            }
+
+            if (!formData.severity || formData.severity.includes('Assessment')) {
+                showNotification('❌ Please assess the risk level');
+                document.getElementById('severityLevel').focus();
+                return;
+            }
+
+            if (!formData.description.trim()) {
+                showNotification('❌ Please provide a detailed description');
+                document.getElementById('description').focus();
+                return;
+            }
+
+            const reportId = 'HR-' + Date.now().toString().slice(-8) + '-' + Math.floor(Math.random() * 1000);
+            
+            showNotification(✅ Report ${reportId} submitted successfully!);
+            showNotification('📊 Processing through AI analysis system...');
+            
+            setTimeout(() => {
+                showNotification('🧠 AI analysis complete - Report categorized and prioritized');
+                localStorage.removeItem('hazardReportDraft');
+            }, 3000);
+        }
+
+        // Same particle, globe, and neural network functions as before...
+        // [Include all previous JavaScript functions here for completeness]
+
+        // Copy all the previous JavaScript functions from the earlier version
+        // (initializeOptimizedParticles, initializeEnhanced3DGlobe, etc.)
+
+        function initializeOptimizedParticles() {
+            const canvas = document.getElementById('particleCanvas');
+            const ctx = canvas.getContext('2d');
+            
+            particleSystem.canvas = canvas;
+            particleSystem.context = ctx;
+
+            function resizeCanvas() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            }
+
+            resizeCanvas();
+            window.addEventListener('resize', resizeCanvas);
+
+            // Create optimized particles
+            for (let i = 0; i < particleSystem.particleCount; i++) {
+                particleSystem.particles.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height,
+                    vx: (Math.random() - 0.5) * 2,
+                    vy: (Math.random() - 0.5) * 2,
+                    radius: Math.random() * 3 + 1,
+                    opacity: Math.random() * 0.6 + 0.4,
+                    hue: Math.random() * 60 + 200
+                });
+            }
+
+            function animateParticles() {
+                if (!particleSystem.animationRunning) return;
+
+                ctx.fillStyle = 'rgba(135, 206, 235, 0.05)';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+                particleSystem.particles.forEach(function(particle, i) {
+                    // Update position
+                    particle.x += particle.vx;
+                    particle.y += particle.vy;
+
+                    // Wrap edges
+                    if (particle.x < 0) particle.x = canvas.width;
+                    if (particle.x > canvas.width) particle.x = 0;
+                    if (particle.y < 0) particle.y = canvas.height;
+                    if (particle.y > canvas.height) particle.y = 0;
+
+                    // Draw particle
+                    ctx.fillStyle = hsla(${particle.hue}, 70%, 60%, ${particle.opacity});
+                    ctx.beginPath();
+                    ctx.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
+                    ctx.fill();
+
+                    // Draw connections
+                    for (let j = i + 1; j < particleSystem.particles.length; j++) {
+                        const other = particleSystem.particles[j];
+                        const dx = particle.x - other.x;
+                        const dy = particle.y - other.y;
+                        const distance = Math.sqrt(dx * dx + dy * dy);
+
+                        if (distance < 100) {
+                            ctx.strokeStyle = rgba(135, 206, 235, ${0.3 * (1 - distance / 100)});
+                            ctx.lineWidth = 0.5;
+                            ctx.beginPath();
+                            ctx.moveTo(particle.x, particle.y);
+                            ctx.lineTo(other.x, other.y);
+                            ctx.stroke();
+                        }
+                    }
+                });
+
+                requestAnimationFrame(animateParticles);
+            }
+
+            animateParticles();
+        }
+
+        // Enhanced 3D Globe with Country Outlines (same as previous version)
+        function initializeEnhanced3DGlobe() {
+            const canvas = document.getElementById('globeCanvas');
+            const ctx = canvas.getContext('2d');
+            
+            globe3D.canvas = canvas;
+            globe3D.context = ctx;
+
+            function resizeGlobe() {
+                canvas.width = canvas.offsetWidth * window.devicePixelRatio;
+                canvas.height = canvas.offsetHeight * window.devicePixelRatio;
+                canvas.style.width = canvas.offsetWidth + 'px';
+                canvas.style.height = canvas.offsetHeight + 'px';
+                ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
+            }
+
+            resizeGlobe();
+            window.addEventListener('resize', resizeGlobe);
+
+            // Enhanced hazard points
+            globe3D.hazardPoints = [
+                { lat: 13.0827, lon: 80.2707, severity: 'high', type: 'tsunami', name: 'Chennai Coast' },
+                { lat: 8.5241, lon: 76.9366, severity: 'medium', type: 'storm', name: 'Kerala Coast' },
+                { lat: 15.2993, lon: 74.1240, severity: 'low', type: 'waves', name: 'Goa Coast' },
+                { lat: 19.0760, lon: 72.8777, severity: 'high', type: 'surge', name: 'Mumbai Coast' },
+                { lat: 22.5726, lon: 88.3639, severity: 'medium', type: 'current', name: 'Kolkata Coast' },
+                { lat: 20.2961, lon: 85.8245, severity: 'high', type: 'tsunami', name: 'Bhubaneswar Coast' },
+                { lat: 11.0168, lon: 76.9558, severity: 'medium', type: 'waves', name: 'Kochi Coast' },
+                { lat: 17.6868, lon: 83.2185, severity: 'low', type: 'swell', name: 'Visakhapatnam Coast' }
+            ];
+
+            function project3D(lat, lon, radius) {
+                const phi = (lat * Math.PI) / 180;
+                const theta = ((lon - 180) * Math.PI) / 180 + globe3D.rotationY;
+                
+                const x = radius * Math.cos(phi) * Math.cos(theta);
+                const y = radius * Math.sin(phi);
+                const z = radius * Math.cos(phi) * Math.sin(theta);
+                
+                // Apply rotation
+                const rotatedX = x * Math.cos(globe3D.rotationX) - z * Math.sin(globe3D.rotationX);
+                const rotatedZ = x * Math.sin(globe3D.rotationX) + z * Math.cos(globe3D.rotationX);
+                
+                return {
+                    x: rotatedX,
+                    y: y,
+                    z: rotatedZ,
+                    visible: rotatedZ > 0
+                };
+            }
+
+            function drawGlobe() {
+                const centerX = canvas.offsetWidth / 2;
+                const centerY = canvas.offsetHeight / 2;
+                const radius = Math.min(canvas.offsetWidth, canvas.offsetHeight) * 0.4 * globe3D.zoomLevel;
+
+                // Clear canvas
+                ctx.fillStyle = 'rgba(70, 130, 180, 0.1)';
+                ctx.fillRect(0, 0, canvas.offsetWidth, canvas.offsetHeight);
+
+                // Draw globe sphere
+                const gradient = ctx.createRadialGradient(
+                    centerX - radius * 0.3, centerY - radius * 0.3, 0,
+                    centerX, centerY, radius
+                );
+                gradient.addColorStop(0, 'rgba(135, 206, 235, 0.9)');
+                gradient.addColorStop(0.7, 'rgba(70, 130, 180, 0.8)');
+                gradient.addColorStop(1, 'rgba(25, 25, 112, 0.6)');
+
+                ctx.fillStyle = gradient;
+                ctx.beginPath();
+                ctx.arc(centerX, centerY, radius, 0, Math.PI * 2);
+                ctx.fill();
+
+                // Draw latitude/longitude grid
+                ctx.strokeStyle = 'rgba(255, 255, 255, 0.15)';
+                ctx.lineWidth = 1;
+
+                // Latitude lines
+                for (let lat = -80; lat <= 80; lat += 20) {
+                    ctx.beginPath();
+                    let first = true;
+                    for (let lon = -180; lon <= 180; lon += 10) {
+                        const point = project3D(lat, lon, radius);
+                        if (point.visible) {
+                            const screenX = centerX + point.x;
+                            const screenY = centerY - point.y;
+                            if (first) {
+                                ctx.moveTo(screenX, screenY);
+                                first = false;
+                            } else {
+                                ctx.lineTo(screenX, screenY);
+                            }
+                        }
+                    }
+                    ctx.stroke();
+                }
+
+                // Longitude lines
+                for (let lon = -180; lon <= 180; lon += 30) {
+                    ctx.beginPath();
+                    let first = true;
+                    for (let lat = -80; lat <= 80; lat += 10) {
+                        const point = project3D(lat, lon, radius);
+                        if (point.visible) {
+                            const screenX = centerX + point.x;
+                            const screenY = centerY - point.y;
+                            if (first) {
+                                ctx.moveTo(screenX, screenY);
+                                first = false;
+                            } else {
+                                ctx.lineTo(screenX, screenY);
+                            }
+                        }
+                    }
+                    ctx.stroke();
+                }
+
+                // Draw hazard points
+                globe3D.hazardPoints.forEach(function(hazard, index) {
+                    const point = project3D(hazard.lat, hazard.lon, radius * 1.02);
+                    
+                    if (point.visible) {
+                        const screenX = centerX + point.x;
+                        const screenY = centerY - point.y;
+                        const pulseSize = 6 + Math.sin(Date.now() * 0.003 + index) * 3;
+                        const opacity = 0.8 + Math.sin(Date.now() * 0.002 + index) * 0.2;
+
+                        const colors = {
+                            high: rgba(255, 100, 100, ${opacity}),
+                            medium: rgba(255, 200, 100, ${opacity}),
+                            low: rgba(100, 255, 100, ${opacity})
+                        };
+
+                        // Outer glow
+                        ctx.beginPath();
+                        ctx.arc(screenX, screenY, pulseSize * 2, 0, Math.PI * 2);
+                        ctx.fillStyle = colors[hazard.severity].replace(opacity.toString(), (opacity * 0.3).toString());
+                        ctx.fill();
+
+                        // Inner point
+                        ctx.beginPath();
+                        ctx.arc(screenX, screenY, pulseSize, 0, Math.PI * 2);
+                        ctx.fillStyle = colors[hazard.severity];
+                        ctx.fill();
+
+                        // Icon
+                        const icons = {
+                            tsunami: '🌊', storm: '⚡', waves: '〰',
+                            surge: '🌪', current: '💨', swell: '🔄'
+                        };
+                        
+                        ctx.fillStyle = 'white';
+                        ctx.font = ${pulseSize + 2}px Arial;
+                        ctx.textAlign = 'center';
+                        ctx.textBaseline = 'middle';
+                        ctx.fillText(icons[hazard.type] || '⚠', screenX, screenY);
+                    }
+                });
+
+                return { centerX, centerY, radius };
+            }
+
+            function animateGlobe() {
+                drawGlobe();
+
+                if (globe3D.autoRotating && !globe3D.mouseDown) {
+                    globe3D.rotationY += globalAppState.globeRotationSpeed;
+                }
+
+                requestAnimationFrame(animateGlobe);
+            }
+
+            // Mouse interactions (same as before)
+            canvas.addEventListener('mousedown', function(e) {
+                globe3D.mouseDown = true;
+                globe3D.lastMouseX = e.clientX;
+                globe3D.lastMouseY = e.clientY;
+                globe3D.autoRotating = false;
+            });
+
+            canvas.addEventListener('mousemove', function(e) {
+                if (globe3D.mouseDown) {
+                    const deltaX = e.clientX - globe3D.lastMouseX;
+                    const deltaY = e.clientY - globe3D.lastMouseY;
+
+                    globe3D.rotationY += deltaX * 0.01;
+                    globe3D.rotationX += deltaY * 0.01;
+
+                    globe3D.rotationX = Math.max(-Math.PI / 2, Math.min(Math.PI / 2, globe3D.rotationX));
+
+                    globe3D.lastMouseX = e.clientX;
+                    globe3D.lastMouseY = e.clientY;
+                }
+            });
+
+            canvas.addEventListener('mouseup', function() {
+                globe3D.mouseDown = false;
+                setTimeout(function() {
+                    globe3D.autoRotating = true;
+                }, 3000);
+            });
+
+            // Wheel zoom
+            canvas.addEventListener('wheel', function(e) {
+                e.preventDefault();
+                const zoomFactor = e.deltaY > 0 ? 0.9 : 1.1;
+                globe3D.zoomLevel = Math.max(0.5, Math.min(4.0, globe3D.zoomLevel * zoomFactor));
+            });
+
+            // Start animation
+            animateGlobe();
+        }
+
+        // Neural Network (simplified version)
+        function initializeNeuralNetwork() {
+            const canvas = document.getElementById('neuralCanvas');
+            const ctx = canvas.getContext('2d');
+
+            function resizeNeural() {
+                canvas.width = canvas.offsetWidth;
+                canvas.height = canvas.offsetHeight;
+            }
+
+            resizeNeural();
+            window.addEventListener('resize', resizeNeural);
+
+            const nodes = [];
+            const connections = [];
+            const layers = [3, 5, 5, 3];
+
+            // Create nodes
+            layers.forEach(function(layerSize, layerIndex) {
+                for (let i = 0; i < layerSize; i++) {
+                    nodes.push({
+                        x: (layerIndex + 1) * (canvas.width / (layers.length + 1)),
+                        y: (i + 1) * (canvas.height / (layerSize + 1)),
+                        activation: Math.random(),
+                        layer: layerIndex
+                    });
+                }
+            });
+
+            // Create connections
+            nodes.forEach(function(node, i) {
+                nodes.forEach(function(target, j) {
+                    if (target.layer === node.layer + 1) {
+                        connections.push({
+                            from: i,
+                            to: j,
+                            weight: Math.random() * 2 - 1
+                        });
+                    }
+                });
+            });
+
+            function animateNeural() {
+                ctx.fillStyle = 'rgba(135, 206, 235, 0.1)';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+                // Update activations
+                nodes.forEach(function(node, i) {
+                    if (node.layer === 0) {
+                        node.activation = Math.sin(Date.now() * 0.002 + i) * 0.5 + 0.5;
+                    }
+                });
+
+                // Draw connections
+                connections.forEach(function(conn) {
+                    const from = nodes[conn.from];
+                    const to = nodes[conn.to];
+                    const opacity = Math.abs(conn.weight) * from.activation;
+
+                    ctx.strokeStyle = rgba(135, 206, 235, ${opacity});
+                    ctx.lineWidth = Math.abs(conn.weight) * 2;
+                    ctx.beginPath();
+                    ctx.moveTo(from.x, from.y);
+                    ctx.lineTo(to.x, to.y);
+                    ctx.stroke();
+                });
+
+                // Draw nodes
+                nodes.forEach(function(node) {
+                    const size = 4 + node.activation * 6;
+                    ctx.fillStyle = rgba(135, 206, 235, ${node.activation});
+                    ctx.beginPath();
+                    ctx.arc(node.x, node.y, size, 0, Math.PI * 2);
+                    ctx.fill();
+
+                    ctx.fillStyle = rgba(255, 255, 255, ${node.activation * 0.8});
+                    ctx.beginPath();
+                    ctx.arc(node.x, node.y, size * 0.3, 0, Math.PI * 2);
+                    ctx.fill();
+                });
+
+                requestAnimationFrame(animateNeural);
+            }
+
+            animateNeural();
+        }
+
+        // Data Updates and other functions (same as before)
+        function startDataUpdates() {
+            setInterval(function() {
+                const reports = parseInt(document.getElementById('activeReports').textContent) || 0;
+                document.getElementById('activeReports').textContent = Math.max(0, reports + Math.floor(Math.random() * 10) - 5);
+
+                const mentions = parseInt(document.getElementById('socialMentions').textContent.replace(',', '')) || 0;
+                document.getElementById('socialMentions').textContent = Math.max(0, mentions + Math.floor(Math.random() * 50) - 25).toLocaleString();
+
+                const predictions = parseInt(document.getElementById('aiPredictions').textContent) || 0;
+                document.getElementById('aiPredictions').textContent = Math.max(0, predictions + Math.floor(Math.random() * 4) - 2);
+
+                const accuracy = parseFloat(document.getElementById('accuracy').textContent.replace('%', '')) || 90;
+                document.getElementById('accuracy').textContent = Math.max(85, Math.min(99.9, accuracy + (Math.random() - 0.5))).toFixed(1) + '%';
+
+                const response = parseFloat(document.getElementById('responseTime').textContent.replace('s', '')) || 2.3;
+                document.getElementById('responseTime').textContent = Math.max(0.5, Math.min(5.0, response + (Math.random() - 0.5) * 0.5)).toFixed(1) + 's';
+
+                const stations = parseInt(document.getElementById('coastalStations').textContent) || 47;
+                document.getElementById('coastalStations').textContent = Math.max(40, Math.min(60, stations + Math.floor(Math.random() * 3) - 1));
+
+                const risks = ['LOW', 'MODERATE', 'ELEVATED', 'HIGH'];
+                document.getElementById('riskLevel').textContent = risks[Math.floor(Math.random() * risks.length)];
+
+                // Random notifications
+                if (Math.random() < 0.08) {
+                    const alerts = [
+                        '🌊 New tsunami monitoring data received',
+                        '⚡ Storm system detected in Bay of Bengal',
+                        '📊 AI model updated with latest satellite data',
+                        '🚨 Coastal warning system activated',
+                        '🛰 Satellite imagery processing complete',
+                        '📡 Emergency beacon signal detected'
+                    ];
+                    showNotification(alerts[Math.floor(Math.random() * alerts.length)]);
+                }
+            }, 4000);
+        }
+
+        function initializeGeolocation() {
+            if ('geolocation' in navigator) {
+                navigator.geolocation.getCurrentPosition(function(position) {
+                    const lat = position.coords.latitude.toFixed(6);
+                    const lon = position.coords.longitude.toFixed(6);
+                    document.getElementById('locationInput').value = 📍 ${lat}, ${lon};
+                    showNotification(📍 Location detected: ${lat}, ${lon});
+                });
+            }
+        }
+
+        function setupEventHandlers() {
+            document.addEventListener('mousemove', function(e) {
+                globalAppState.mousePosition = { x: e.clientX, y: e.clientY };
+            });
+
+            // Navigation items
+            document.querySelectorAll('.nav-item').forEach(function(item, index) {
+                item.addEventListener('click', function() {
+                    const features = ['Dashboard', 'Reports', 'Analytics', 'Alerts', 'Settings', 'Help'];
+                    showNotification(🚀 ${features[index]} activated);
+                });
+            });
+
+            // Visibility change
+            document.addEventListener('visibilitychange', function() {
+                particleSystem.animationRunning = !document.hidden;
+            });
+        }
+
+        function emergencyProtocol() {
+            showNotification('🆘 EMERGENCY PROTOCOL ACTIVATED!');
+            setTimeout(() => showNotification('📞 Emergency services contacted'), 2000);
+            setTimeout(() => showNotification('🚁 Rescue units dispatched'), 4000);
+        }
+
+        function aiAssistance() {
+            showNotification('🤖 AI Assistant analyzing your report...');
+            setTimeout(() => {
+                const suggestions = [
+                    '🧠 AI suggests monitoring wind patterns',
+                    '🌊 Similar incidents reported nearby',
+                    '📊 Risk assessment elevated for your area'
+                ];
+                showNotification(suggestions[Math.floor(Math.random() * suggestions.length)]);
+            }, 3000);
+        }
+
+        // Globe Controls (same as before)
+        function toggle3DMode() { showNotification('🌍 3D Globe mode toggled'); }
+        function toggleSatellite() { showNotification('🛰 Satellite view toggled'); }
+        function toggleReports() { showNotification('📍 Reports layer toggled'); }
+        function toggleSocial() { showNotification('💬 Social media layer toggled'); }
+        function toggleWeather() { showNotification('🌦 Weather overlay toggled'); }
+        function toggleOceanCurrent() { showNotification('🌊 Ocean currents toggled'); }
+
+        function zoomInGlobe() {
+            globe3D.zoomLevel = Math.min(4.0, globe3D.zoomLevel * 1.2);
+            showNotification('🔍 Globe zoomed in');
+        }
+
+        function zoomOutGlobe() {
+            globe3D.zoomLevel = Math.max(0.5, globe3D.zoomLeve
